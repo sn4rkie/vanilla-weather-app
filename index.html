@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Weather App</title>
+		<meta charset="UTF-8" />
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous" />
+		<link rel="stylesheet" href="src/styles.css" />
+		<script src="https://kit.fontawesome.com/edfc89714d.js" crossorigin="anonymous"></script>
+		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<div class="row">
+				<div class="inputCard col-7">
+					<h7 class="date"></h7>
+					<h2 class="clock" onload="showTime()"></h2>
+					<h3 class="city"></h3>
+					<br />
+					<button class="searchButton" title="Search"><i class="fas fa-search"></i></button>
+					<button class="positionButton" title="Current Location"><i class="fas fa-map-marker-alt"></i></button>
+					<button class="celsius" title="Celsius">°C</button>
+					<button class="fahrenheit" title="Fahrenheit">°F</button>
+					<h1 class="temperature"></h1>
+					<h6 class="met-description"></h6>
+					<div class="detailsCard row">
+						<div class="detailsCardTop hiloIcon col-4" title="High | Low"><i class="fas fa-sort-up"></i> | <i class="fas fa-sort-down"></i></div>
+						<div class="detailsCardTop windIcon col-4" title="Wind Speed"><i class="fas fa-wind"></i></div>
+						<div class="detailsCardTop humidityIcon col-4" title="Humidity"><i class="fas fa-tint"></i></div>
+
+						<div class="detailsCardBottom hiloResult col-4"></div>
+						<div class="detailsCardBottom windResult col-4"></div>
+						<div class="detailsCardBottom humidityResult col-4"></div>
+					</div>
+				</div>
+
+				<div class="forecastCard col-5">
+					<ul>
+						<li class="forecastLi row">
+							<div class="icon col-6"><i class="fas fa-sun"></i></div>
+							<div class="temp col-6">30°C</div>
+							<div class="met col-6">Sunny</div>
+							<div class="date col-6">11.01.2020</div>
+						</li>
+						<li class="forecastLi row">
+							<div class="icon col-6"><i class="fas fa-cloud-rain"></i></div>
+							<div class="temp col-6">30°C</div>
+							<div class="met col-6">Sunny</div>
+							<div class="date col-6">11.01.2020</div>
+						</li>
+						<li class="forecastLi row">
+							<div class="icon col-6"><i class="fas fa-sun"></i></div>
+							<div class="temp col-6">30°C</div>
+							<div class="met col-6">Sunny</div>
+							<div class="date col-6">11.01.2020</div>
+						</li>
+						<li class="forecastLi row">
+							<div class="icon col-6"><i class="fas fa-cloud"></i></div>
+							<div class="temp col-6">30°C</div>
+							<div class="met col-6">Sunny</div>
+							<div class="date col-6">11.01.2020</div>
+						</li>
+						<li class="forecastLi row">
+							<div class="icon col-6"><i class="fas fa-cloud-rain"></i></div>
+							<div class="temp col-6">30°C</div>
+							<div class="met col-6">Sunny</div>
+							<div class="date col-6">11.01.2020</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<p>
+			Coded by Bren Valkyrie<br />
+			<button class="github" title="Open Source"><i class="fas fa-code"></i></button>
+			<button class="linkedin" title="Linked In"><i class="fab fa-linkedin-in"></i></button>
+		</p>
+		<script src="src/index.js"></script>
+	</body>
+</html>
