@@ -11,7 +11,7 @@ body {
 div.container {
 	background-color: rgba(255, 255, 255, 0);
 	border-radius: 15px;
-	margin: 50px auto 0px;
+	margin: 100px auto 0px;
 	height: 550px;
 	width: 1000px;
 }
@@ -44,6 +44,7 @@ div.inputCard {
 
 h7.date {
 	display: block;
+	font-size:25px;
 }
 
 h2.clock {
@@ -61,11 +62,15 @@ h3.chosen-city {
 	margin-bottom: 0px;
 }
 
-h6.description {
+.met-description {
 	font-size: 20px;
 	padding: 0px;
 	border-bottom: 1px solid rgba(0, 0, 0, 0.3);
 	padding-bottom: 5px;
+}
+
+.met-description:first-letter {
+	text-transform: uppercase;
 }
 
 div.detailsCard {
@@ -94,6 +99,7 @@ div.forecastCard {
 
 li {
 	list-style-type: none;
+	height:150px;
 	border-bottom: 1px solid rgba(0, 0, 0, 0.5);
 	padding: 10px; /* for distance from border underline */
 }
@@ -103,11 +109,16 @@ ul {
 }
 
 div.icon {
-	font-size: 35px;
 	text-align: left;
+	vertical-align: middle;
+	height: 20px;
+	width: auto;
+	padding:0;
+	margin:0;
+
 }
 div.met {
-	text-align: left;
+	text-align: right;
 }
 div.temp {
 	font-size: 30px;
@@ -115,6 +126,7 @@ div.temp {
 }
 div.date {
 	text-align: right;
+	padding-bottom:30px;
 }
 
 p {
