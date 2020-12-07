@@ -13,48 +13,38 @@
 		<div class="container">
 			<div class="row">
 				<div class="inputCard col-7">
-					<h7 class="date"></h7>
 					<h2 class="clock" onload="showTime()"></h2>
+					<h7 class="date"></h7>
 					<h3 class="city"></h3>
 					<br />
-					<button class="searchButton" title="Search"><i class="fas fa-search"></i></button>
+
+					<span class="icon"><img src="" id="iconDay1"><h1 class="temperature"></h1></span>
+					<h6 class="met-description"></h6>
+					<br/>
+
 					<button class="positionButton" title="Current Location"><i class="fas fa-map-marker-alt"></i></button>
 					<button class="celsius" title="Celsius">°C</button>
 					<button class="fahrenheit" title="Fahrenheit">°F</button>
-					<h1 class="temperature"></h1>
-					<h6 class="met-description"></h6>
-					<div class="detailsCard row">
-						<div class="detailsCardTop hiloIcon col-4" title="High | Low"><i class="fas fa-sort-up"></i> | <i class="fas fa-sort-down"></i></div>
-						<div class="detailsCardTop windIcon col-4" title="Wind Speed"><i class="fas fa-wind"></i></div>
-						<div class="detailsCardTop humidityIcon col-4" title="Humidity"><i class="fas fa-tint"></i></div>
 
-						<div class="detailsCardBottom hiloResult col-4"></div>
-						<div class="detailsCardBottom windResult col-4"></div>
-						<div class="detailsCardBottom humidityResult col-4"></div>
-					</div>
 				</div>
 
-				<div class="forecastCard col-5">
-					<ul>
-						<li class="forecastLi row">
-							<div class="icon col-6"><img src="" id="iconDay1"></div>
-							<div class="temp col-6" id="tempDay1">30°C</div>
-							<div class="met col-12" id="metDay1">Sunny</div>
-							<div class="date col-12" id="dateDay1">11.01.2020</div>
-						</li>
-						<li class="forecastLi row">
-							<div class="icon col-6" id="iconDay2"><i class="fas fa-cloud-rain"></i></div>
-							<div class="temp col-6" id="tempDay2">30°C</div>
-							<div class="met col-12" id="metDay2">Sunny</div>
-							<div class="date col-12" id="dateDay2">11.01.2020</div>
-						</li>
-						<li class="forecastLi row">
-							<div class="icon col-6" id="iconDay3"><i class="fas fa-sun"></i></div>
-							<div class="temp col-6" id="tempDay3">30°C</div>
-							<div class="met col-12" id="metDay3">Sunny</div>
-							<div class="date col-12" id="dateDay3">11.01.2020</div>
-						</li>
-					</ul>
+				<div class="detailsCard col-5">
+					<div class="detailsCardTop hiloIcon" title="High | Low"><i class="fas fa-sort-up"></i> | <i class="fas fa-sort-down"></i></div>
+					<div class="detailsCardBottom hiloResult"></div>
+
+					<div class="detailsCardTop windIcon" title="Wind Speed"><i class="fas fa-wind"></i></div>
+					<div class="detailsCardBottom windResult"></div>
+
+					<div class="detailsCardTop humidityIcon" title="Humidity"><i class="fas fa-tint"></i></div>
+					<div class="detailsCardBottom humidityResult"></div>
+
+					<br/>
+					<form id="search-form">
+						<input type="search" placeholder="Type a city.." id="cityInput"/>
+						<input type="submit" placeholder="Search"/>
+						<button class="searchButton" title="Search"><i class="fas fa-search"></i></button>
+					</form>
+
 				</div>
 			</div>
 		</div>

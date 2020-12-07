@@ -12,8 +12,33 @@ div.container {
 	background-color: rgba(255, 255, 255, 0);
 	border-radius: 15px;
 	margin: 100px auto 0px;
-	height: 550px;
-	width: 1000px;
+	max-height: 550px;
+	max-width:650px;
+	text-align:center;
+}
+
+div.row {
+	background-color: rgba(0, 0, 0, 0.3);
+	color: rgba(255, 255, 255, 0.8);
+	border-radius: 15px;
+	padding: 30px;
+}
+
+.clock {
+	font-size: 40px;
+}
+
+.date {
+	font-size:20px;
+}
+
+.city {
+	padding-top:30px;
+}
+
+#cityInput {
+	background: rgba(89, 89, 89, 0.5);
+	border:none;
 }
 
 button {
@@ -33,40 +58,25 @@ button:hover {
 	color: rgba(0, 0, 0, 0.4);
 }
 
-/* BEGIN INPUT CODING */
-
-div.inputCard {
-	padding: 30px;
-	background-color: rgba(0, 0, 0, 0.3);
-	color: rgba(255, 255, 255, 0.8);
-	border-radius: 15px 0px 0px 15px;
-}
-
-h7.date {
-	display: block;
-	font-size:25px;
-}
-
-h2.clock {
-	font-size: 40px;
-}
-
-h3.chosen-city {
-	display: inline;
+.icon {
+	display:inline;
+	text-align: left;
+	vertical-align: middle;
+	width: auto;
+	padding:0;
+	margin:0;
 }
 
 .temperature {
-	font-size: 65px;
-	padding-top: 30px;
-	padding-bottom: 15px;
+	display:inline;
+	font-size: 55px;
 	margin-bottom: 0px;
+	vertical-align:middle;
 }
 
 .met-description {
 	font-size: 20px;
-	padding: 0px;
-	border-bottom: 1px solid rgba(0, 0, 0, 0.3);
-	padding-bottom: 5px;
+	padding-bottom: 20px;
 }
 
 .met-description:first-letter {
@@ -75,20 +85,29 @@ h3.chosen-city {
 
 div.detailsCard {
 	text-align: center;
-	padding: 15px;
+	padding: 15px 15px 15px 30px;
+	border-left: 1px solid rgba(255, 255, 255, 0.5);
 }
 
 div.detailsCardTop {
-	font-size: 30px;
+	font-size: 25px;
 	padding: 15px;
 }
 
 div.detailsCardBottom {
 	font-size: 20px;
+	padding-bottom:20px;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.5);
 }
 
-/* BEGIN 5 DAY FORECAST */
+p {
+	color: white;
+	opacity: 0.8;
+	font-size: 15px;
+	padding:10px;
+}
 
+/*
 div.forecastCard {
 	color: rgba(0, 0, 0, 0.9);
 	background-color: rgba(255, 255, 255, 0.3);
@@ -101,11 +120,11 @@ li {
 	list-style-type: none;
 	height:150px;
 	border-bottom: 1px solid rgba(0, 0, 0, 0.5);
-	padding: 10px; /* for distance from border underline */
+	padding: 10px; for distance from border underline 
 }
 
 ul {
-	padding: 20px 40px; /* for distance from container edge */
+	padding: 20px 40px; for distance from container edge 
 }
 
 div.icon {
@@ -127,11 +146,4 @@ div.temp {
 div.date {
 	text-align: right;
 	padding-bottom:30px;
-}
-
-p {
-	color: white;
-	opacity: 0.8;
-	font-size: 15px;
-	margin-top: 10px;
 }
