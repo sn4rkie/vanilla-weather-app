@@ -4,15 +4,17 @@ function displayWeather(response) {
 	document.querySelector(`.city`).innerHTML = (`${response.data.name}, ${response.data.sys.country}`);
 	document.querySelector(`.temperature`).innerHTML = `${Math.round(response.data.main.temp)}°C`;
 	document.querySelector(`.met-description`).innerHTML = (`${response.data.weather[0].description}`);
-	document.querySelector(`.hiloResult`).innerHTML = `${Math.round(response.data.main.temp_max)}°C | ${Math.round(response.data.main.temp_min)}°C`;
-	document.querySelector(`.windResult`).innerHTML = (`${response.data.wind.speed} km/hr`);
-	document.querySelector(`.humidityResult`).innerHTML = (`${response.data.main.humidity}%`);
+	document.querySelector(`.hiloResult`).innerHTML = `<strong>${Math.round(response.data.main.temp_max)}°</strong> | ${Math.round(response.data.main.temp_min)}°`;
+	document.querySelector(`.windResult`).innerHTML = (`Wind Speed<br/>${response.data.wind.speed} km/hr`);
+	document.querySelector(`.humidityResult`).innerHTML = (`Humidity</br>${response.data.main.humidity}%`);
 
 	let iconElement = document.querySelector(`#iconNow`);
 	iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`)
 	iconElement.setAttribute("alt", `${response.data.weather[0].description}`);
 
 	celsiusTemperature = Math.round(response.data.main.temp);
+	hiloCelsius = `<strong>${Math.round(response.data.main.temp_max)}°</strong> | ${Math.round(response.data.main.temp_min)}°`;
+	hiloFahrenheit = `<strong>${Math.round(response.data.main.temp_max * (9 / 5) + 32)}°</strong> | ${Math.round(response.data.main.temp_min * (9 / 5) + 32)}°`;
 
 	let date = new Date();
 	let weekdays = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
@@ -32,6 +34,8 @@ function formatHours(timestamp) {
 	if (h < 10) {h = `0${h}`;}
 	if (m < 10) {m = `0${m}`;}
 
+	setInterval(Date.now(), 1000)
+
 	return h + ":" + m;
 }
 
@@ -41,49 +45,40 @@ function displayForecast(response) {
 
 	let forecastElement1 = document.querySelector(".forecast1");
 	forecastElement1.innerHTML = `${formatHours(forecast.list[0].dt * 1000)}
-	<img src="http://openweathermap.org/img/wn/${forecast.list[0].weather[0].icon}@2x.png">
-	${forecast.list[0].weather[0].main.temp_min} | ${forecast.list[0].weather[0].main.temp_min}`;
+	<img src="http://openweathermap.org/img/wn/${forecast.list[0].weather[0].icon}@2x.png">`;
 
 	let forecastElement2 = document.querySelector(".forecast2");
 	forecastElement2.innerHTML = `${formatHours(forecast.list[1].dt * 1000)}
-	<img src="http://openweathermap.org/img/wn/${forecast.list[1].weather[0].icon}@2x.png">
-	${forecast.list[1].weather[0].main.temp_min} | ${forecast.list[1].weather[0].main.temp_min}`;
+	<img src="http://openweathermap.org/img/wn/${forecast.list[1].weather[0].icon}@2x.png">`;
 
 	let forecastElement3 = document.querySelector(".forecast3");
 	forecastElement3.innerHTML = `${formatHours(forecast.list[2].dt * 1000)}
-	<img src="http://openweathermap.org/img/wn/${forecast.list[2].weather[0].icon}@2x.png">
-	${forecast.list[2].weather[0].main.temp_min} | ${forecast.list[2].weather[0].main.temp_min}`;
-	
+	<img src="http://openweathermap.org/img/wn/${forecast.list[2].weather[0].icon}@2x.png">`;	
+
 	let forecastElement4 = document.querySelector(".forecast4");
 	forecastElement4.innerHTML = `${formatHours(forecast.list[3].dt * 1000)}
-	<img src="http://openweathermap.org/img/wn/${forecast.list[3].weather[0].icon}@2x.png">
-	${forecast.list[3].weather[0].main.temp_min} | ${forecast.list[3].weather[0].main.temp_min}`;
+	<img src="http://openweathermap.org/img/wn/${forecast.list[3].weather[0].icon}@2x.png">`;
 	
 	let forecastElement5 = document.querySelector(".forecast5");
 	forecastElement5.innerHTML = `${formatHours(forecast.list[4].dt * 1000)}
-	<img src="http://openweathermap.org/img/wn/${forecast.list[4].weather[0].icon}@2x.png">
-	${forecast.list[4].weather[0].main.temp_min} | ${forecast.list[4].weather[0].main.temp_min}`;
+	<img src="http://openweathermap.org/img/wn/${forecast.list[4].weather[0].icon}@2x.png">`;
 	
 	let forecastElement6 = document.querySelector(".forecast6");
 	forecastElement6.innerHTML = `${formatHours(forecast.list[5].dt * 1000)}
-	<img src="http://openweathermap.org/img/wn/${forecast.list[5].weather[0].icon}@2x.png">
-	${forecast.list[5].weather[0].main.temp_min} | ${forecast.list[5].weather[0].main.temp_min}`;
+	<img src="http://openweathermap.org/img/wn/${forecast.list[5].weather[0].icon}@2x.png">`;
 }
-
-
-	/*
-	icon3.innerHTML("#icon3-hi", `${forecast.weather[0].main.temp_max}`);
-	icon3.innerHTML("#icon3-lo", `${forecast.weather[0].main.temp_min}`);*/
 
 function convertToFahrenheit(event) {
 	event.preventDefault();
 	let fahrenheit = Math.round(celsiusTemperature * (9 / 5) + 32);	
 	document.querySelector(`.temperature`).innerHTML = `${fahrenheit}°F`;
+	document.querySelector(`.hiloResult`).innerHTML = `${hiloFahrenheit}`;
 }
 
 function convertToCelsius(event) {
 	event.preventDefault();
 	document.querySelector(`.temperature`).innerHTML = `${Math.round(celsiusTemperature)}°C`;
+	document.querySelector(`.hiloResult`).innerHTML = `${hiloCelsius}`;
 }
 
 function handleSearch(event) {
@@ -113,6 +108,10 @@ function search(city) {
 	let forecastUrl = `${forecastEndpoint}q=${city}&units=metric&appid=${apiKey}`;
 	axios.get(forecastUrl).then(displayForecast);
 }
+
+let celsiusTemperature = null
+let hiloFahrenheit = null
+let hiloCelsius = null
 
 let celsiusButton = document.querySelector(`.celsius`);
 celsiusButton.addEventListener("click", convertToCelsius);

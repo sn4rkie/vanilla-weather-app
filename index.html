@@ -16,18 +16,17 @@
 					<h2 class="clock" onload="showTime()"></h2>
 					<h7 class="date"></h7>
 					<h3 class="city"></h3>
-					<br />
 
 					<span class="icon"><img src="" id="iconNow"><h1 class="temperature"></h1></span>
 					<h6 class="met-description"></h6>
-					<br/>
 
 					<button class="positionButton" title="Current Location"><i class="fas fa-map-marker-alt"></i></button>
 					<button class="celsius" title="Celsius">°C</button>
 					<button class="fahrenheit" title="Fahrenheit">°F</button>
+					
 					<form id="search-form">
 						<input type="search" placeholder="Type a city.." id="cityInput"/>
-						<input type="submit" placeholder="Search" class="btn btn-primary"/>					
+						<input type="submit" placeholder="search" id="submitButton"/>					
 					</form>
 
 				</div>
@@ -58,16 +57,16 @@
 				<div class="forecast6 col-2">
 				</div>
 			</div>
+					<p>
+						Open-source coding by Bren Valkyrie.<br />
+						<a href="https://github.com/sn4rkie/vanilla-weather-app" id="github" target="_blank">
+							<button title="Open Source"><i class="fas fa-code"></i></button>
+						</a>
+						<a href="https://www.linkedin.com/in/bren-valkyrie-5497781b7/" id="linkedin" target="_blank">
+							<button class="linkedin" title="Linked In"><i class="fab fa-linkedin-in"></i></button>
+						</a>
+					</p>
 		</div>
-		<p>
-			Coded by Bren Valkyrie<br />
-			<a href="https://github.com/sn4rkie/vanilla-weather-app" class="github" target="_blank">
-				<button title="Open Source"><i class="fas fa-code"></i></button>
-			</a>
-			<a href="https://github.com/sn4rkie/vanilla-weather-app" class="github" target="_blank">
-				<button class="linkedin" title="Linked In"><i class="fab fa-linkedin-in"></i></button>
-			</a>
-		</p>
 		<script src="src/index.js"></script>
 	</body>
 </html>
