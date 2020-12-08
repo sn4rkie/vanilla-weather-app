@@ -18,33 +18,44 @@
 					<h3 class="city"></h3>
 					<br />
 
-					<span class="icon"><img src="" id="iconDay1"><h1 class="temperature"></h1></span>
+					<span class="icon"><img src="" id="iconNow"><h1 class="temperature"></h1></span>
 					<h6 class="met-description"></h6>
 					<br/>
 
 					<button class="positionButton" title="Current Location"><i class="fas fa-map-marker-alt"></i></button>
 					<button class="celsius" title="Celsius">°C</button>
 					<button class="fahrenheit" title="Fahrenheit">°F</button>
+					<form id="search-form">
+						<input type="search" placeholder="Type a city.." id="cityInput"/>
+						<input type="submit" placeholder="Search" class="btn btn-primary"/>					
+					</form>
 
 				</div>
 
 				<div class="detailsCard col-5">
-					<div class="detailsCardTop hiloIcon" title="High | Low"><i class="fas fa-sort-up"></i> | <i class="fas fa-sort-down"></i></div>
-					<div class="detailsCardBottom hiloResult"></div>
+					<div class="hiloIcon" title="High | Low"><i class="fas fa-sort-up"></i> | <i class="fas fa-sort-down"></i></div>
+					<div class="hiloResult"></div>
 
-					<div class="detailsCardTop windIcon" title="Wind Speed"><i class="fas fa-wind"></i></div>
-					<div class="detailsCardBottom windResult"></div>
+					<div class="windIcon" title="Wind Speed"><i class="fas fa-wind"></i></div>
+					<div class="windResult"></div>
 
-					<div class="detailsCardTop humidityIcon" title="Humidity"><i class="fas fa-tint"></i></div>
-					<div class="detailsCardBottom humidityResult"></div>
-
-					<br/>
-					<form id="search-form">
-						<input type="search" placeholder="Type a city.." id="cityInput"/>
-						<input type="submit" placeholder="Search"/>
-						<button class="searchButton" title="Search"><i class="fas fa-search"></i></button>
-					</form>
-
+					<div class="humidityIcon" title="Humidity"><i class="fas fa-tint"></i></div>
+					<div class="humidityResult"></div>
+				</div>
+			</div>
+				
+			<div class="forecastCard row">
+				<div class="forecast1 col-2">
+				</div>
+				<div class="forecast2 col-2">
+				</div>
+				<div class="forecast3 col-2">
+				</div>
+				<div class="forecast4 col-2">
+				</div>
+				<div class="forecast5 col-2">
+				</div>
+				<div class="forecast6 col-2">
 				</div>
 			</div>
 		</div>

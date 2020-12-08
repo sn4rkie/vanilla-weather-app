@@ -1,5 +1,5 @@
 body {
-	background-image: url("media/night.jpg");
+	background-image: url("media/day.jpeg");
 	background-repeat: no-repeat;
 	background-size: cover;
 	transition: all 3s ease-in-out;
@@ -11,7 +11,7 @@ body {
 div.container {
 	background-color: rgba(255, 255, 255, 0);
 	border-radius: 15px;
-	margin: 100px auto 0px;
+	margin: 50px auto 0px;
 	max-height: 550px;
 	max-width:650px;
 	text-align:center;
@@ -20,7 +20,6 @@ div.container {
 div.row {
 	background-color: rgba(0, 0, 0, 0.3);
 	color: rgba(255, 255, 255, 0.8);
-	border-radius: 15px;
 	padding: 30px;
 }
 
@@ -58,10 +57,11 @@ button:hover {
 	color: rgba(0, 0, 0, 0.4);
 }
 
-.icon {
+.icon img {
 	display:inline;
 	text-align: left;
 	vertical-align: middle;
+	height:75px;
 	width: auto;
 	padding:0;
 	margin:0;
@@ -69,14 +69,14 @@ button:hover {
 
 .temperature {
 	display:inline;
-	font-size: 55px;
+	font-size: 40px;
 	margin-bottom: 0px;
 	vertical-align:middle;
 }
 
 .met-description {
 	font-size: 20px;
-	padding-bottom: 20px;
+	padding-bottom: 10px;
 }
 
 .met-description:first-letter {
@@ -89,15 +89,21 @@ div.detailsCard {
 	border-left: 1px solid rgba(255, 255, 255, 0.5);
 }
 
-div.detailsCardTop {
+div.hiloResult, .windResult, .humidityResult {
+	border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+	font-size: 20px;
+	padding-bottom:20px;
+}
+
+div.hiloIcon, .windIcon, .humidityIcon {
 	font-size: 25px;
 	padding: 15px;
 }
 
-div.detailsCardBottom {
-	font-size: 20px;
-	padding-bottom:20px;
-	border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+div.forecastCard {
+	border-top: 1px solid rgba(255, 255, 255, 0.5);
+	font-size: 12px;
+	padding: 10px;
 }
 
 p {
@@ -105,45 +111,4 @@ p {
 	opacity: 0.8;
 	font-size: 15px;
 	padding:10px;
-}
-
-/*
-div.forecastCard {
-	color: rgba(0, 0, 0, 0.9);
-	background-color: rgba(255, 255, 255, 0.3);
-	border-radius: 0px 15px 15px 0px;
-	height: 550px;
-	display: inline;
-}
-
-li {
-	list-style-type: none;
-	height:150px;
-	border-bottom: 1px solid rgba(0, 0, 0, 0.5);
-	padding: 10px; for distance from border underline 
-}
-
-ul {
-	padding: 20px 40px; for distance from container edge 
-}
-
-div.icon {
-	text-align: left;
-	vertical-align: middle;
-	height: 20px;
-	width: auto;
-	padding:0;
-	margin:0;
-
-}
-div.met {
-	text-align: right;
-}
-div.temp {
-	font-size: 30px;
-	text-align: right;
-}
-div.date {
-	text-align: right;
-	padding-bottom:30px;
 }
