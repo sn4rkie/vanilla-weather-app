@@ -87,26 +87,30 @@ function handleSearch(event) {
 	search(city.value);
 }
 
-function showPosition(position) {
-	let apiKey = "4b71899235f734ae8df5f2e02f0aba1a";
-	let apiEndpoint = `https://api.openweathermap.org/data/2.5/weather?`;
-	let localApiUrl = `${apiEndpoint}lat=${position.coords.latitude}&lon=${position.coords.longitude}&units=metric&appid=${apiKey}`;
-	axios.get(localApiUrl).then(displayWeather);	
-}
-
-function getPosition() {
-	navigator.geolocation.getCurrentPosition(showPosition);
-}
-
 function search(city) {
 	let apiKey = "4b71899235f734ae8df5f2e02f0aba1a";
 	let apiEndpoint = `https://api.openweathermap.org/data/2.5/weather?`;
 	let searchApiUrl = `${apiEndpoint}q=${city}&units=metric&appid=${apiKey}`;
 	axios.get(searchApiUrl).then(displayWeather);
-
+	
 	let forecastEndpoint = "https://api.openweathermap.org/data/2.5/forecast?";
 	let forecastUrl = `${forecastEndpoint}q=${city}&units=metric&appid=${apiKey}`;
 	axios.get(forecastUrl).then(displayForecast);
+}
+
+function showPosition(position) {
+	let apiKey = "4b71899235f734ae8df5f2e02f0aba1a";
+	let apiEndpoint = `https://api.openweathermap.org/data/2.5/weather?`;
+	let localApiUrl = `${apiEndpoint}lat=${position.coords.latitude}&lon=${position.coords.longitude}&units=metric&appid=${apiKey}`;
+	axios.get(localApiUrl).then(displayWeather);	
+					
+	let forecastEndpoint = "https://api.openweathermap.org/data/2.5/forecast?";
+	let forecastUrl = `${forecastEndpoint}lat=${position.coords.latitude}&lon=${position.coords.longitude}&units=metric&appid=${apiKey}`;
+	axios.get(forecastUrl).then(displayForecast);
+}
+					
+function getPosition() {
+	navigator.geolocation.getCurrentPosition(showPosition);
 }
 
 let celsiusTemperature = null
